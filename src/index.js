@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Accueil from './Accueil';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Ligues from './Ligues';
+import Equipes from './Equipes';
+import Matchs from './Matchs';
+import PageNonExistante from './PageNonExistante';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Accueil />} />
+      <Route path="/ligues" element={<Ligues />} />
+      <Route path="/equipes" element={<Equipes />} />
+      <Route path="/matchs" element={<Matchs />} />
+      <Route path="*" element={<PageNonExistante />} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

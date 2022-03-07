@@ -1,0 +1,10 @@
+.menu{
+background: grey;
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+.menu li{
+    display: flex;
+}

@@ -1,0 +1,61 @@
+.afficheMatchs .cadreImage img{
+    max-width: 45%;
+    max-height: 65%;
+    align-items: center;
+    padding: 0px 10px;
+}
+ .afficheMatchs .cadreImage{
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 20px 30px ;
+    border-bottom: solid 2px rgb(197, 197, 197);
+    background-color: rgb(248, 248, 248);
+    border-radius: 10px;
+ }
+.afficheMatchs .cadreImage .vsImage{
+    width: 50px;
+}
+.afficheMatchs p{
+    text-align: center;
+    padding: 0px 40px;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 15px 0px;
+}
+.afficheMatchs .score{
+    font-size: 2em;
+    width: 100%;
+}
+.afficheMatchs{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 25px 50px;
+    border: solid rgb(197, 197, 197) 2px;
+    border-radius: 10px;
+}
+.listeMatchsPresents, .listeMatchsFinis, .listeMatchsFuturs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.victoire{
+    color: green;
+}
+.defaite{
+    color: red;
+}
+.lienLive{
+    padding-bottom: 15px;
+}
+.lienLive button{
+    background-color: rgb(37, 37, 194);
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}

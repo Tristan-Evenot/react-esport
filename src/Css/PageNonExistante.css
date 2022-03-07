@@ -1,0 +1,16 @@
+.labelError404{
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    width: 500px;
+    color: white;
+    padding: 100px 200px;
+    font-size: 45px;
+    border-radius: 5px;
+}
+.error404{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
