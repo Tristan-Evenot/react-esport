@@ -6,18 +6,36 @@ import react from 'react';
 
 function Joueurs() {
     const [joueurs, setJoueurs] = useState([])
+    const options = [
+        {
+            label: "csgo",
+            value: 'csgo',
+        },
+        {
+            label: "league of legends",
+            value: 'lol',
+        }
+    ]
+    const [jeu, setJeu] = useState('csgo')
+
+    const envoyer = (valeur) => {
+        setJeu(valeur);
+    }
 
     react.useEffect(() => {
-        axios.get("https://api.pandascore.co/csgo/players?per_page=200&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
+        axios.get("https://api.pandascore.co/" + jeu + "/players?per_page=200&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
             setJoueurs(response.data);
             console.log(response.data);
         });
-    }, [])
+    }, [jeu])
     return (
         <body>
             <div className="Joueurs">
                 <Header></Header>
                 <h1>Joueurs</h1>
+                <select onInput={e => envoyer(e.target.value)}>{options.map(option => (
+                    <option value={option.value}> {option.label}</option>
+                ))}</select>
                 <div className="listeJoueurs">
                     {
                         joueurs.map(joueur => (
