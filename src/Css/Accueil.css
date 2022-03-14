@@ -11,7 +11,7 @@ h1, h2{
 .liste .affiche{
   font-size: 35px;
   background-color: grey;
-  padding: 100px;
+  padding: 50px;
   border-radius: 10px;
 }
 .liste a{
