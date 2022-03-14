@@ -15,6 +15,11 @@ function Ligues() {
             label: "league of legends",
             value: 'lol',
         }
+        ,
+        {
+            label: "Dota 2",
+            value: 'dota2',
+        },
     ]
     const [jeu, setJeu] = useState('csgo')
 

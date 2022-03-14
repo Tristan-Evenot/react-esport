@@ -11,36 +11,58 @@ function Matchs() {
     const [matchsPasses, setMatchsPasses] = useState([])
     var nbMatchsPasses = 6;
     var nbMatchsFuturs = 6;
+    const options = [
+        {
+            label: "csgo",
+            value: 'csgo',
+        },
+        {
+            label: "league of legends",
+            value: 'lol',
+        },
+        {
+            label: "Dota 2",
+            value: 'dota2',
+        },
+    ]
+    const [jeu, setJeu] = useState('csgo')
+
+    const envoyer = (valeur) => {
+        setJeu(valeur);
+    }
 
     function voirPlusDeMatchsPasses(nombre) {
         nombre += 6;
-        axios.get("https://api.pandascore.co/csgo/matches/past?per_page=" + nombre + "&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
+        axios.get("https://api.pandascore.co/" + jeu + "/matches/past?per_page=" + nombre + "&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
             setMatchsPasses(response.data);
         });
     }
     function voirPlusDeMatchsFuturs(nombre) {
         nombre += 6;
-        axios.get("https://api.pandascore.co/csgo/matches/upcoming?per_page=" + nombre + "&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
+        axios.get("https://api.pandascore.co/" + jeu + "/matches/upcoming?per_page=" + nombre + "&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
             setMatchsFuturs(response.data);
         });
     }
 
     react.useEffect(() => {
-        axios.get("https://api.pandascore.co/csgo/matches/past?per_page=6&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
+        axios.get("https://api.pandascore.co/" + jeu + "/matches/past?per_page=6&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
             setMatchsPasses(response.data);
         });
-        axios.get("https://api.pandascore.co/csgo/matches/running?token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
+        axios.get("https://api.pandascore.co/" + jeu + "/matches/running?token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
             setMatchsPresents(response.data);
         });
-        axios.get("https://api.pandascore.co/csgo/matches/upcoming?per_page=6&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
+        axios.get("https://api.pandascore.co/" + jeu + "/matches/upcoming?per_page=6&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
             setMatchsFuturs(response.data);
             console.log(response.data)
         });
-    }, [])
+    }, [jeu])
     return (
         <div className="Matchs">
             <Header></Header>
             <h1>Matchs</h1>
+            <select onInput={e => envoyer(e.target.value)}>{options.map(option => (
+                <option value={option.value}> {option.label}</option>
+            ))}</select>
             <h2>Matchs en cours</h2>
             <div className="listeMatchsPresents">
                 {
