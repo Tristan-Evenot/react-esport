@@ -1,5 +1,5 @@
-import './Css/Ligues.css';
-import Header from './Header';
+import './../Css/Ligues.css';
+import Header from '../Header';
 import axios from "axios";
 import { useState } from 'react';
 import react from 'react';

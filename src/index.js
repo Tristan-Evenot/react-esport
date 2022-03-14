@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Accueil from './Accueil';
+import Accueil from './pages/Accueil';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Ligues from './Ligues';
-import Equipes from './Equipes';
-import Matchs from './Matchs';
-import PageNonExistante from './PageNonExistante';
+import Ligues from './pages/Ligues';
+import Equipes from './pages/Equipes';
+import Matchs from './pages/Matchs';
+import PageNonExistante from './pages/PageNonExistante';
+import Joueurs from './pages/Joueurs';
+import Connexion from './pages/Connexion';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,7 +17,9 @@ ReactDOM.render(
       <Route path="/" element={<Accueil />} />
       <Route path="/ligues" element={<Ligues />} />
       <Route path="/equipes" element={<Equipes />} />
+      <Route path="/joueurs" element={<Joueurs />} />
       <Route path="/matchs" element={<Matchs />} />
+      <Route path="/connexion" element={<Connexion />} />
       <Route path="*" element={<PageNonExistante />} />
     </Routes>
   </BrowserRouter>,

@@ -16,7 +16,13 @@ function Header() {
                         <Link to="/Equipes">Equipes</Link>
                     </li>
                     <li>
+                        <Link to="/Joueurs">Joueurs</Link>
+                    </li>
+                    <li>
                         <Link to="/Matchs">Matchs</Link>
+                    </li>
+                    <li>
+                        <Link to="/Connexion">Connexion</Link>
                     </li>
                 </ul>
             </nav>

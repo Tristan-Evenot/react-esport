@@ -4,3 +4,17 @@
 h1, h2{
   text-align: center;
 }
+.liste{
+  display: flex;
+  justify-content: space-evenly;
+}
+.liste .affiche{
+  font-size: 35px;
+  background-color: grey;
+  padding: 100px;
+  border-radius: 10px;
+}
+.liste a{
+  text-decoration: none;
+  color: white;
+}

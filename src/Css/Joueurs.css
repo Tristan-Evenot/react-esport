@@ -1,9 +1,9 @@
-.afficheEquipes .cadreImage img{
+.afficheJoueurs .cadreImage img{
     max-width: 100%;
     max-height: 100%;
     align-items: center;
 }
- .afficheEquipes .cadreImage{
+ .afficheJoueurs .cadreImage{
     height: 200px;
     width: 100%;
     justify-content: center;
@@ -15,42 +15,39 @@
     border-radius: 10px;
 
  }
-.afficheEquipes p{
+.afficheJoueurs .pseudo{
     text-align: center;
-    padding: 5px;
-    margin: 0px;
+    padding: 5px 15px;
     font-size: 1.2em;
     font-weight: 500;
-    width: 100%;
+    border: solid 1px;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 5px;
 }
-.afficheEquipes{
+.afficheJoueurs{
     width: 340px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
     margin: 25px 50px;
     border: solid rgb(197, 197, 197) 2px;
     border-radius: 10px;
 }
-.listeEquipes{
+.listeJoueurs{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.listeMembres{
+.info{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
-.nomMembre{
-    width: 45%;
+.identite, .nationalite, .role, .equipe{
+    margin: 0;
+    padding: 5px 15px;
 }
-.nomMembre a{
-    text-decoration: none;
-    color: rgb(85, 84, 84);
-    font-size: 18px;
-    font-weight: 500;
-}
-.nomMembre::marker{
-    content: '';
+
+.equipe{
+    margin-bottom: 15px;
 }
