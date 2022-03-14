@@ -37,6 +37,7 @@ function Connexion() {
                 setErrorMessages({ name: "pass", message: errors.pass });
             } else {
                 setIsSubmitted(true);
+                window.localStorage.setItem('username')
             }
         } else {
             setErrorMessages({ name: "uname", message: errors.uname });

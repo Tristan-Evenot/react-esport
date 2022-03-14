@@ -8,7 +8,7 @@ function Joueurs() {
     const [joueurs, setJoueurs] = useState([])
 
     react.useEffect(() => {
-        axios.get("https://api.pandascore.co/csgo/players?per_page=150&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
+        axios.get("https://api.pandascore.co/csgo/players?per_page=200&token=fgMRHcZ7cSjqE1ykSqh0RCsdIa7ZSdyZxDgj9WYIENSDsZT2qlA").then(response => {
             setJoueurs(response.data);
             console.log(response.data);
         });
